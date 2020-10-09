@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: black;
+  font-family: "Rale-way", sans-serif;
+}
+.container {
+  max-width: 1170px;
+  margin: auto;
+  padding: 0 30px;
+}
+
+/* start of header */
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+/* start of logo */
+.logo a {
+  text-decoration: none;
+  font-size: 26px;
+  font-family: "Rale-way", sans-serif;
+  font-weight: 300;
+  color: #d88b1a;
+}
+/* end of logo */
+
+/* start of nav bar */
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  display: inline-block;
+  margin-left: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+.nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: 0.5s linear color;
+  font-size: 20px;
+}
+.nav li.active::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background-color: #d88b1a;
+  right: 0;
+  bottom: 0;
+}
+.nav li.active::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #d88b1a;
+  right: 0;
+  bottom: -8px;
+}
+/* end of navbar */
+
+/* Start of nav toggle */
+.nav-toggle {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #4a4a4a;
+  border-radius: 50%;
+  display: none;
+  z-index: 200;
+}
+.nav-toggle span {
+  display: block;
+  height: 3px;
+  width: 21px;
+  background-color: white;
+  text-align: left;
+  margin-bottom: 5px;
+  position: relative;
+}
+.nav-toggle span::before {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  right: 0;
+  width: 15px;
+  height: 100%;
+  background-color: white;
+}
+.nav-toggle span::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  right: 0;
+  width: 28px;
+  height: 100%;
+  background-color: white;
+}
+/* end of nav-toggle */
+/* end of header */
+
+/* start of home */
+.square {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border: 2px solid #d88b1a;
+  bottom: 10%;
+  left: 30px;
+  animation: rotate 3s linear infinite;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #d88b1a;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  border-radius: 50%;
+  margin-left: -50px;
+  z-index: -1;
+  animation: oscillate 3s linear infinite;
+}
+.hand {
+  font-size: 25px;
+  animation: greet 6s linear;
+}
+@keyframes greet {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(120deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes oscillate {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(20px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.home-section .info {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+.home-section .info p {
+  font-weight: 14px;
+  margin: 0;
+}
+.home-section .info h1 {
+  font-size: 50px;
+  margin: 0;
+  font-weight: lighter;
+}
+.home-section .info h3 {
+  margin: 0;
+  font-weight: 100;
+}
+/* end of home */
+@media (max-width: 600px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 270px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0e0d0d;
+    transform: translateX(100%);
+    transition: 0.5s linear transform;
+    z-index: 199;
+  }
+  .nav.open {
+    transform: translate(0);
+  }
+  .nav ul li {
+    margin-left: 0;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .nav ul li a:hover {
+    color: #d88b1a;
+  }
+  .nav li.active::before,
+  .nav li.active::after {
+    display: none;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+}
+/* media query */

@@ -146,7 +146,7 @@ body {
   height: 9px;
   margin: 2px;
   border-radius: 50%;
-  animation: bounce 2s linear infinite;
+  animation: bounce 3s linear infinite;
 }
 .circle {
   width: 100px;
@@ -162,9 +162,9 @@ body {
 }
 .hand-image {
   display: inline-block;
-  width: 25px;
-  height: 25px;
-  animation: greet 1s ease infinite;
+  width: 15px;
+  height: 15px;
+  animation: greet 3s ease infinite;
 }
 @keyframes bounce {
   0% {

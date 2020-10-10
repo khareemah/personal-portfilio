@@ -12,4 +12,5 @@ for (let i = 0; i < links.length; i++) {
 }
 navToggle.addEventListener("click", function() {
   nav.classList.toggle("open");
+  navToggle.classList.toggle("open");
 });

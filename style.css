@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
   background-color: black;
-  font-family: "Rale-way", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 .container {
   max-width: 1170px;
@@ -25,7 +26,6 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 20;
 }
 
 /* start of logo */
@@ -33,7 +33,7 @@ body {
   text-decoration: none;
   font-size: 26px;
   font-family: "Rale-way", sans-serif;
-  font-weight: 300;
+  font-weight: 600;
   color: #d88b1a;
 }
 /* end of logo */
@@ -130,6 +130,24 @@ body {
   left: 30px;
   animation: rotate 3s linear infinite;
 }
+.rectangle {
+  width: 50px;
+  height: 60px;
+  position: absolute;
+  top: 35%;
+  right: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.rectangle span {
+  width: 9px;
+  background-color: #4a4a4a;
+  height: 9px;
+  margin: 2px;
+  border-radius: 50%;
+  animation: bounce 2s linear infinite;
+}
 .circle {
   width: 100px;
   height: 100px;
@@ -142,16 +160,29 @@ body {
   z-index: -1;
   animation: oscillate 3s linear infinite;
 }
-.hand {
-  font-size: 25px;
-  animation: greet 6s linear;
+.hand-image {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  animation: greet 1s ease infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 @keyframes greet {
   0% {
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(120deg);
+    transform: rotate(60deg);
   }
   100% {
     transform: rotate(0deg);
@@ -184,20 +215,24 @@ body {
   color: white;
 }
 .home-section .info p {
-  font-weight: 14px;
+  font-weight: 16px;
   margin: 0;
+  font-family: "Sansita Swashed", cursive;
 }
 .home-section .info h1 {
   font-size: 50px;
   margin: 0;
-  font-weight: lighter;
+  font-weight: 600;
 }
 .home-section .info h3 {
   margin: 0;
-  font-weight: 100;
+  font-weight: 400;
 }
 /* end of home */
 @media (max-width: 600px) {
+  .home-section .info h1 {
+    font-size: 30px;
+  }
   .nav {
     position: fixed;
     top: 0;
